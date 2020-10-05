@@ -1,0 +1,67 @@
+<div class="card border-secondary">
+    <div class="card-header text-dark bg-interno">
+      <strong>PRESTADORA</strong>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table id="tblPrestadora" class="table table-hover table-striped table-sm">
+              <thead>
+                <tr>
+                  <th class="align-middle">Nome</th>
+                  <th class="align-middle text-center">Departamento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let funcionario of funcionarios">
+                    <!-- <tr *ngFor="let funcionario of funcionarios | async"> -->
+                  <td class="align-middle">{{funcionario.key}}</td>
+                  <td class="align-middle">{{funcionario.nome}}</td>
+                  <td class="align-middle">{{funcionario.departamento}}</td>
+                  <td></td>
+                  <td class="align-middle text-center">
+
+                    <button class="btn btn-info" (click)="editar(funcionario, funcionario.key)">Editar</button>
+                    
+                    <button class="btn btn-danger ml-2" (click)="delete(funcionario.key)">Excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <pagination-controls class="pagination-control float-right" (pageChange)="pageColaborador = $event"
+            id="p_colaborador" maxSize="5" autoHide="true" autoHide="true" previousLabel="" nextLabel="">
+          </pagination-controls> -->
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-12 text-right">
+          <button class="btn btn-success" (click)="incluirColaborador()" title='Tela de cadastro do canteiro!'>
+            Incluir
+          </button>
+        </div>
+      </div> -->
+    </div>
+  </div>  
+<!-- 
+<table class="table table-hover table-striped">
+
+    <thead>
+        <th>Nome</th>
+        <th>Departamento</th>
+        <th></th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let funcionario of funcionarios | async">
+           <td>{{funcionario.nome}}</td>
+           <td>{{funcionario.departamento}}</td>
+           <td>
+               <button class="btn btn-info" (click)="editar(funcionario, funcionario.key)">Editar</button>
+               <button class="btn btn-danger ml-2" (click)="delete(funcionario.key)">Excluir</button>
+           </td>
+        </tr>
+    </tbody>
+
+</table> -->
