@@ -1,3 +1,5 @@
+import { SharedModule } from './shared/shared.module';
+import { FormMensagemError } from './commons/utils/form-mensagem-error';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +12,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ListComponent } from './views/funcionarios/list/list.component';
 import { EditarComponent } from './views/funcionarios/editar/editar.component';
 import { FuncionarioDataComponent } from './views/funcionarios/funcionario-data/funcionario-data.component';
+import { FormMensagemComponent } from './commons/form-mensagem/form-mensagem.component';
 
 
 // import { MaterializeModule } from "angular2-materialize";
@@ -20,6 +23,7 @@ import { FuncionarioDataComponent } from './views/funcionarios/funcionario-data/
     ListComponent,
     EditarComponent,
     FuncionarioDataComponent
+    //  ,FormMensagemComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +31,21 @@ import { FuncionarioDataComponent } from './views/funcionarios/funcionario-data/
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
     // MaterializeModule
   ],
-  providers: [],
+  exports: [
+    // DndModule,
+    SharedModule
+  ],
+  providers: [FormMensagemError],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // Diagnostic only: inspect router configuration
+  constructor() {
+    // console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+
+}

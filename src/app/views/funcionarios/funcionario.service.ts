@@ -37,15 +37,6 @@ export class FuncionarioService {
       })
     )
 
-
-
-  //   return this.conexaoFirebase.collection("produtos").onSnapshot((documentos) => {
-
-  //     return documentos;
-  //   });
-
- 
-
   }
 
   deletar(key: string){
