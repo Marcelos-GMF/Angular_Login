@@ -20,5 +20,8 @@ export class FuncionarioDataService {
     this.funcionarioSource.next({
       funcionario: funcionario, key: key
     })
+
+    console.log('Obter = ', funcionario, ' Chave = ', key);
+
   }
 }

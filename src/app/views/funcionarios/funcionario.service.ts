@@ -2,6 +2,7 @@ import { Funcionario } from './../../components/funcionario';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,15 +27,25 @@ export class FuncionarioService {
   }
 
 
-  getAll(){
+  getAll() : Observable<any> {
 
     return this.angularFireDatabase.list("funcionarios")
     .snapshotChanges()
     .pipe(
       map(changes => {
-        return changes.map(data => ({key: data.payload.key, ... data.payload.val }));
+        return changes.map(data => ({key: data.payload.key, ... data.payload.exportVal()  }));
       })
     )
+
+
+
+  //   return this.conexaoFirebase.collection("produtos").onSnapshot((documentos) => {
+
+  //     return documentos;
+  //   });
+
+ 
+
   }
 
   deletar(key: string){

@@ -11,13 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
 
-  funcionarios: any[]=[];// Observable<any>[]=[];
+  funcionarios: any[]=[];//  
 
   constructor(private funcionarioService: FuncionarioService,
     private funcionarioDataService: FuncionarioDataService) { }
 
   ngOnInit(): void {
-    this.funcionarioService.getAll().subscribe(resposta => {
+   
+    this.funcionarioService.getAll().subscribe((resposta: Array<any>) => {
       this.funcionarios = resposta;
       console.log('lista = ', resposta);
     });
