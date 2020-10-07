@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
 
-  funcionarios: any[]=[];//  
+  funcionarios: any[]=[];
+  p_funcionarios: number = 0;
 
   constructor(private funcionarioService: FuncionarioService,
     private funcionarioDataService: FuncionarioDataService) { }

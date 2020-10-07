@@ -54,13 +54,47 @@
 
 <!-- Configuração no Firebase do Projeto: "Projeto-Firebase-Web"	 -->
 
-<div class="container jumbotron">
+<!-- <div class="container jumbotron">
  
   <router-outlet></router-outlet>
 
   <app-editar></app-editar>
 
-  <!-- <app-list></app-list> -->
+  
+</div> -->
+<!-- <app-list></app-list> -->
 
+
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div id="criterioPesquisa" class="col-md-12">
+
+      <div class="main-card card border-secondary">
+
+        <div class="card-header text-white bg-principal">
+          <i class="fa fa-window-restore"></i>
+          <!-- <strong>{{tituloPagina}}</strong> -->
+        </div>
+
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <!-- <app-criteiro-pesquisa-canteiro (resultadoPesquisaCanteiroVO)="executaPesquisaCanteiro($event)">
+              </app-criteiro-pesquisa-canteiro> -->
+              <router-outlet></router-outlet>
+
+              <app-editar></app-editar>
+
+            </div>
+          </div>
+
+          <!-- <app-grid-canteiro [entradaPesquisaCanteiro]="listaCanteiroVO"></app-grid-canteiro> -->
+          <app-list></app-list>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
