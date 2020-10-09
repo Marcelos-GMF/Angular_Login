@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'principal',
+    pathMatch: 'full'
+  },
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent },
   { path: 'editar', component: EditarComponent}
