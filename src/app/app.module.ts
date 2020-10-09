@@ -14,15 +14,46 @@ import { EditarComponent } from './views/funcionarios/editar/editar.component';
 import { FuncionarioDataComponent } from './views/funcionarios/funcionario-data/funcionario-data.component';
 import { FormMensagemComponent } from './commons/form-mensagem/form-mensagem.component';
 
-
 // import { MaterializeModule } from "angular2-materialize";
+
+  // Import components
+  import {
+    FooterComponent,
+    HeaderComponent
+    // AppAsideComponent,
+    // AppBreadcrumbsComponent,
+    // AppSidebarComponent,
+    // AppSidebarFooterComponent,
+    // AppSidebarFormComponent,
+    // AppSidebarHeaderComponent,
+    // AppSidebarMinimizerComponent,
+    // APP_SIDEBAR_NAV
+  } from './components';
+import { LoginComponent } from './views/pages/login/login.component';
+
+  const APP_COMPONENTS = [
+    FooterComponent,
+    HeaderComponent,
+    // AppAsideComponent,
+    // AppBreadcrumbsComponent,
+    // AppSidebarComponent,
+    // AppSidebarFooterComponent,
+    // AppSidebarFormComponent,
+    // AppSidebarHeaderComponent,
+    // AppSidebarMinimizerComponent,
+    // APP_SIDEBAR_NAV
+  ]
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     EditarComponent,
-    FuncionarioDataComponent
+    FuncionarioDataComponent,
+    ...APP_COMPONENTS,
+    HeaderComponent,
+    LoginComponent,
+    // FullLayoutComponent,
     //  ,FormMensagemComponent
   ],
   imports: [
@@ -35,11 +66,16 @@ import { FormMensagemComponent } from './commons/form-mensagem/form-mensagem.com
     SharedModule
     // MaterializeModule
   ],
+
   exports: [
     // DndModule,
     SharedModule
   ],
   providers: [FormMensagemError],
+  // entryComponents: [
+  //   ModalSimplesComponent,
+  //   ModalConfirmacaoComponent,
+  //   ModalInputCepComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,70 +1,5 @@
-
-<!-- 
-<ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-</ul> -->
-
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav> -->
-
-<!-- Configuração no Firebase do Projeto: "Projeto-Firebase-Web"	 -->
-
-<!-- <div class="container jumbotron">
- 
-  <router-outlet></router-outlet>
-
-  <app-editar></app-editar>
-
-  
-</div> -->
-<!-- <app-list></app-list> -->
-
-
+<!-- Cabeçalho -->
+<!-- <app-header></app-header>
 
 <div class="animated fadeIn">
   <div class="row">
@@ -74,15 +9,13 @@
 
         <div class="card-header text-white bg-principal">
           <i class="fa fa-window-restore"></i>
-          <!-- <strong>{{tituloPagina}}</strong> -->
         </div>
 
         <div class="card-body">
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <!-- <app-criteiro-pesquisa-canteiro (resultadoPesquisaCanteiroVO)="executaPesquisaCanteiro($event)">
-              </app-criteiro-pesquisa-canteiro> -->
+ 
               <router-outlet></router-outlet>
 
               <app-editar></app-editar>
@@ -90,7 +23,6 @@
             </div>
           </div>
 
-          <!-- <app-grid-canteiro [entradaPesquisaCanteiro]="listaCanteiroVO"></app-grid-canteiro> -->
           <app-list></app-list>
 
         </div>
@@ -98,3 +30,7 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer> -->
+<!-- Redapé -->
+
+<router-outlet></router-outlet>

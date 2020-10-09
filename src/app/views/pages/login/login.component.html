@@ -1,0 +1,104 @@
+<div class="fundo--login">
+
+    <div class="app flex-row align-items-center">
+  
+      <div class="container">
+  
+        <div class="row justify-content-center">
+  
+          <div class="col-md-6">
+  
+            <div class="card-group">            
+  
+              <div class="card p-4 container-login">
+  
+                <div class="card-body">
+  
+                  <div class="text-center mb-3">
+                    <!-- <img src="assets/img/logo_metrus.svg" class="logo-metrus"> -->
+                    <img src="assets/img/Doutor_estranho.jpg" class="logo-metrus">
+                  </div>
+                  
+  
+                  <form class="form-group" [formGroup]="formGroupLogin" (ngSubmit)="onSubmit()">
+  
+                    <div class="input-group mb-2">
+                      <div class="input-group-addon">
+                        <i class="icon-user"></i>
+                      </div>
+                      <input id="inpusuarioVO" formControlName="chave" [(ngModel)]="usuarioVO.chave" type="text" class="form-control"
+                        placeholder="Informe o usuário" [ngClass]="{'is-valid':formGroupLogin.controls.chave.touched && formGroupLogin.controls.chave.valid,'is-invalid':formGroupLogin.controls.chave.touched && formGroupLogin.controls.chave.invalid}"
+                        (input)="formGroupLogin.patchValue({chave: $event.target.value.toUpperCase()})">
+                    </div>
+  
+                    <div *ngIf="formGroupLogin.controls.chave.touched && formGroupLogin.controls.chave.invalid" class="text-danger mb-2">
+                      <em id="usuarioObrigatorio">Usuário é obrigatório</em>
+                    </div>
+  
+                    <div class="input-group mb-2">
+  
+                      <div class="input-group-addon">
+                        <i class="icon-lock"></i>
+                      </div>
+  
+                        <input id="inpSenha" formControlName="senha" [(ngModel)]="usuarioVO.senha" [type]="typoSenha" class="form-control"
+                        placeholder="Informe a senha" [ngClass]="{'is-valid':formGroupLogin.controls.senha.touched && formGroupLogin.controls.senha.valid, 'is-invalid':formGroupLogin.controls.senha.touched && formGroupLogin.controls.senha.invalid}">
+
+                      <div class="input-group-addon p-0">
+  
+                        <button id="btnExibirOcultarSenha" type="button" class="btn btn-light border" (click)="exibirOcultarSenha()">
+                          <span [ngSwitch]="typoSenha">
+                            <i id="ExibirSenha" *ngSwitchCase="'password'" class="fa fa-eye fa-lg" title="Exibir a senha."></i>
+                            <i id="OcultarSenha" *ngSwitchCase="'text'" class="fa fa-eye-slash fa-lg" title="Ocultar a senha."></i>
+                          </span>
+                        </button>
+  
+                      </div>
+  
+                    </div>
+  
+                    <div *ngIf="formGroupLogin.controls.senha.touched && formGroupLogin.controls.senha.invalid" class="text-danger mb-2">
+                      <em id="senhaObrigatoria">Senha é obrigatória</em>
+                    </div>
+                    <span [hidden]="isCapsOn === false">
+                      <p class="text-card text-center animated fadeIn">
+                        <i id="iconExclamationTriangle"class="fa fa-exclamation-triangle text-warning" style="color:orangered"></i><strong id="capsLockAtivada"class="text-danger">
+                          Tecla Caps Lock ativada</strong>
+                      </p>
+                    </span>
+
+                    <div class="row mb-3">
+                      <div class="col-md-12">
+                        <div class="form-inline justify-content-between">
+                          <div>
+                            <button id="btnOnSubmit" type="submit" class="btn btn-success icon-forward" [disabled]="formGroupLogin.invalid">
+                              Entrar</button>
+                          </div>
+  
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="text-center mb-0">
+                      <img src="assets/img/Doutor_estranho.jpg" class="logo-cedae">
+                    </div>
+  
+                    <p class="card-text text-center">
+                      <small class="text-muted">Versão: 1.0</small>
+                      <!-- <small class="text-muted">Versão: {{versaoVO.versao}}</small> -->
+                    </p>
+  
+                    <p class="card-text text-center">
+                      <!-- <span style="font-size: 14px" [ngClass]="mapperSituacao(versaoVO.ambiente)">{{ambiente}}</span> -->
+                    </p>
+  
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

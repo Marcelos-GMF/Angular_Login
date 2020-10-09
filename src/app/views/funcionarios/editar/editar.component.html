@@ -1,87 +1,72 @@
-<!-- <div class="animated fadeIn">
+ <div class="card-body">
     <div class="row">
         <div class="col-md-12">
-            <div class="main-card card border-secondary">
-
-                <div class="card-header text-white bg-principal">
-                    <i class="fa fa-window-restore"></i>
-                    <strong>CADASTRO DE FUNCIONÁRIOS</strong>
-                </div> -->
+            <div class="card border-secondary">
+                <div class="card-header text-dark bg-interno">
+                    <strong>CADASTRO DE FUNCIONÁRIO</strong>
+                </div>
 
 
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card border-secondary">
-                                <div class="card-header text-dark bg-interno">
-                                    <strong>CADASTRO DE FUNCIONÁRIO</strong>
+
+                            <form class="form-group" (ngSubmit)="onSubmit()" [formGroup]="formGroupEditar"> 
+
+                                <div class="row">
+
+                                    <div class="form-group col-md-4" >
+                                        <label class="form-control-label " for="nome">
+                                        <strong>Nome do funcionário</strong>
+                                        </label>
+                                        <input type="text" id="inpNome" class="form-control" title="Nome do canteiro"  
+                                            maxlength="50"  formControlName="nome" [(ngModel)]="funcionario.nome"              
+                                        [ngClass]="aplicaCssErro('nome')">
+                                        <!-- style="text-transform:uppercase" -->
+                                        <!-- <form-mensagem [mostraErro]="verificaValid('id.nomeCanteiro')" msg="Campo com preenchimento obrigatório!"></form-mensagem> -->
+                                    </div>
+                                    
+
+                                    <div class="form-group col-md-6" >
+                                        <label class="form-control-label " for="departamento">
+                                        <strong>Departamento</strong>
+                                        </label>
+                                        <input type="text" id="inpDepartamento" class="form-control" title="Nome do departamento"  
+                                            maxlength="50"  formControlName="departamento" [(ngModel)]="funcionario.departamento"              
+                                        [ngClass]="aplicaCssErro('departamento')">
+                                        <!-- style="text-transform:uppercase" -->
+                                        <!-- <form-mensagem [mostraErro]="verificaValid('id.nomeCanteiro')" msg="Campo com preenchimento obrigatório!"></form-mensagem> -->
+                                    </div>
+
                                 </div>
 
 
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <span>
+                                            <button type="submit" id="btnPesquisa" class="btn btn-success">
+                                                Salvar
+                                            </button>
+                                        </span>
 
-                                            <form class="form-group" (ngSubmit)="onSubmit()" [formGroup]="formGroupEditar"> 
-
-                                            <div class="row">
-
-                                                <div class="form-group">
-                                                    <label>Nome</label>
-                                                    <input type="text" name="nome" formControlName="nome" [(ngModel)]="funcionario.nome"
-                                                        class="form-control">
-                                                        <!-- [ngClass]="aplicarCSSErro('nome')"> -->
-                                                    <!-- <form-mensagem [mostraErro]="validarCampo('nome')" msg="Campo com preenchimento obrigatório!"></form-mensagem> -->
-                                                </div>
-
-
-                                                <div class="form-group">
-                                                    <label>Departamento</label>
-                                                    <input type="text" name="departamento" formControlName="departamento"
-                                                        [(ngModel)]="funcionario.departamento" class="form-control">
-                                                </div>
-
-                                                <!-- <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary">Salvar</button>
-                                                </div> -->
-
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-md-12 text-right">
-                                                    <span>
-                                                        <button type="submit" id="btnPesquisa" class="btn btn-primary">
-                                                            Salvar
-                                                        </button>
-                                                    </span>
-
-                                                    <span>
-                                                        <button type="button" id="btnLimpar"
-                                                            class="btn btn-outline-principal" (click)="limpar()">
-                                                            Limpar
-                                                        </button>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-
-                                            </form>
-
-                                        </div>
+                                        <span>
+                                            <button type="button" id="btnLimpar"
+                                                class="btn btn-danger ml-2" (click)="limpar()">
+                                                Limpar
+                                            </button>
+                                        </span>
                                     </div>
                                 </div>
 
-                            </div>
+
+                            </form>
+
                         </div>
                     </div>
-                   
-                    <!--  Grid lista -->
-                    <!-- <app-list></app-list> -->
-
                 </div>
-               
-            <!-- </div>
+
+            </div>
         </div>
     </div>
-</div> -->
+
+</div>

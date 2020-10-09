@@ -1,0 +1,32 @@
+.logo-estranho{
+    width: 90px;
+    height: auto;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.footer > span {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.logo-cedae{
+    width: 90px;
+    height: auto;
+}
+
+/* .app-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+   */

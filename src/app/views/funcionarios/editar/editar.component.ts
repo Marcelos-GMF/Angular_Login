@@ -40,23 +40,23 @@ export class EditarComponent implements OnInit {
 
   iniciarTela() {
     this.formGroupEditar = this.formBuilder.group({
-      nome: [Validators.required],
-      departamento: [Validators.required]
+      nome: [null, Validators.required],
+      departamento: [null, Validators.required]
     });
   }
 
   onSubmit() {
-    console.log('Submit = ', this.funcionario);
+    console.log('Submit = ', this.formGroupEditar.value, ' Valida = ', this.formGroupEditar.valid);
     if (this.formGroupEditar.valid) {
 
-      if (this.key) {
-        this.funcionarioService.update(this.funcionario, this.key);
-      } else {
-        this.funcionarioService.insert(this.funcionario);
-      }
+        if (this.key) {
+          this.funcionarioService.update(this.funcionario, this.key);
+        } else {
+          this.funcionarioService.insert(this.funcionario);
+        }
 
-      this.funcionario = new Funcionario();
-      this.key = null;
+        this.funcionario = new Funcionario();
+        this.key = null;
 
     } else {
       FormUtil.verificarValidacaoForm(this.formGroupEditar);
