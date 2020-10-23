@@ -39,13 +39,6 @@ export class AuthService {
                        console.log('Insert = ', JSON.stringify(usuario));
      });
 
-
-    // this.angularFireAuth
-    //                 .auth()
-    //                 .createUserWithEmailAndPassword(usuarioVO.email,usuarioVO.senha)
-    //                 .then((result: any) => {
-    //                   console.log('Insert = ', JSON.stringify(result));
-    // });
   }
   
 }
