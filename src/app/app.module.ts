@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { FormMensagemError } from './commons/utils/form-mensagem-error';
 import { environment } from './../environments/environment';
@@ -63,7 +64,8 @@ import { LoginComponent } from './views/pages/login/login.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
     // MaterializeModule
   ],
 

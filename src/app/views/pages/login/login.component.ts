@@ -42,17 +42,19 @@ export class LoginComponent implements OnInit {
 
   iniciarForm() {
     this.formGroupLogin = this.formBuilder.group({
-      chave: ['', Validators.required],
+      email: ['', Validators.required],
       senha: ['', Validators.required]
     });
   }
 
 
   onSubmit() {
-    console.log('Submit = ', this.formGroupLogin.value, ' Valida = ', this.formGroupLogin.valid);
+    // console.log('Submit = ', this.formGroupLogin.value, ' Valida = ', this.formGroupLogin.valid);
     if (this.formGroupLogin.valid) {
 
          this.auth.logar(this.formGroupLogin.value);
+
+        //  console.log('Logado = ', )
 
         // if (this.key) {
         //   this.funcionarioService.update(this.funcionario, this.key);

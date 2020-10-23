@@ -22,19 +22,25 @@
   
                   <form class="form-group" [formGroup]="formGroupLogin" (ngSubmit)="onSubmit()">
   
+                    <label class="form-control-label " for="nome">
+                      <strong>E-mail</strong>
+                    </label>
                     <div class="input-group mb-2">
                       <div class="input-group-addon">
                         <i class="icon-user"></i>
                       </div>
-                      <input id="inpusuarioVO" formControlName="chave" [(ngModel)]="usuarioVO.chave" type="text" class="form-control"
-                        placeholder="Informe o usuário" [ngClass]="{'is-valid':formGroupLogin.controls.chave.touched && formGroupLogin.controls.chave.valid,'is-invalid':formGroupLogin.controls.chave.touched && formGroupLogin.controls.chave.invalid}"
-                        (input)="formGroupLogin.patchValue({chave: $event.target.value.toUpperCase()})">
+                      <input id="inpusuarioVO" formControlName="email" [(ngModel)]="usuarioVO.email" type="email" class="form-control"
+                        placeholder="Informe o usuário" [ngClass]="{'is-valid':formGroupLogin.controls.email.touched && formGroupLogin.controls.email.valid,'is-invalid':formGroupLogin.controls.email.touched && formGroupLogin.controls.email.invalid}"
+                        (input)="formGroupLogin.patchValue({email: $event.target.value.toUpperCase()})">
                     </div>
   
-                    <div *ngIf="formGroupLogin.controls.chave.touched && formGroupLogin.controls.chave.invalid" class="text-danger mb-2">
+                    <div *ngIf="formGroupLogin.controls.email.touched && formGroupLogin.controls.email.invalid" class="text-danger mb-2">
                       <em id="usuarioObrigatorio">Usuário é obrigatório</em>
                     </div>
-  
+
+                    <label class="form-control-label " for="senha">
+                      <strong>Senha</strong>
+                    </label>
                     <div class="input-group mb-2">
   
                       <div class="input-group-addon">
@@ -78,8 +84,27 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- <label class="text-center" for="cadastro">
+                      <strong>Não tem conta? Cadastre-se</strong>
+                    </label> -->
   
-                    <div class="text-center mb-0">
+                    <p class="text-center"><small><strong>Não tem conta? Cadastre-se</strong></small>
+<a routerLink="colocar o caminho do component"></a>
+                    <p class="text-center"><small>-- ou --</small></p>
+
+
+                    <!-- Autenticação -->
+                    <p class="text-center">
+                      <button class="btn btn-lg btn-defalut" ><i class="fa fa-github fa-2x"></i></button>
+                      <button class="btn btn-lg btn-primary" ><i class="fa fa-facebook fa-2x"></i></button>
+                      <button class="btn btn-lg btn-info" ><i class="fa fa-twitter fa-2x"></i></button>
+                      <button class="btn btn-lg btn-danger" ><i class="fa fa-google fa-2x"></i></button>
+                      <button class="btn btn-lg btn-warning" ><i class="fa fa-user fa-2x"></i></button>
+
+                    </p>
+
+                    <div class="text-center mb-1">
                       <img src="assets/img/Doutor_estranho.jpg" class="logo-cedae">
                     </div>
   

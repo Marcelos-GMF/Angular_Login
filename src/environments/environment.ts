@@ -2,6 +2,9 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+
+
 // Configuração no Firebase do Projeto: "Projeto-Firebase-Web"	
 
 export const environment = {

@@ -5,6 +5,7 @@ export class UsuarioVO {
     chave: string;
     nome: string;
     senha: string;
+    email: string;
     tipoUsuario: number = UsuarioVO.TIPO_USUARIO;
     idUsuario: number;
     idUsuarioMenu: string;
