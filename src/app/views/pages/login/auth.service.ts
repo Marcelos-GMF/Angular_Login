@@ -20,6 +20,16 @@ export class AuthService {
 
     // this.angularFireAuth.signInWithPopup(new auth.GoogleAuthProvider());
 
+    this.angularFireAuth.signInWithEmailAndPassword(usuarioVO.email, usuarioVO.senha)
+          .then(usuario => {
+             console.log('Insert = ', JSON.stringify(usuario));
+             if(usuarioVO){
+               this.router.navigate(['/editar']);
+             } else {
+                alert('Usuário ou senha invalida!');
+             }
+    });
+
       // if(usuarioVO.chave === 'MARCELOS' && usuarioVO.senha === 'Teste12345') {
       //     console.log('Dentro do if', usuarioVO);
       //     this.usuarioAutenticado = true;
@@ -28,7 +38,6 @@ export class AuthService {
       //   console.log('Dentro do else', usuarioVO);
       //     this.usuarioAutenticado = false;
       // }
-      this.insert(usuarioVO);
 
   }
 
@@ -39,6 +48,11 @@ export class AuthService {
                        console.log('Insert = ', JSON.stringify(usuario));
      });
 
+  }
+
+  logout() {
+    this.angularFireAuth.signOut();
+    // ou this.angularFireAuth.signOut().then(() => this.router.navigate(['/login']));
   }
   
 }
