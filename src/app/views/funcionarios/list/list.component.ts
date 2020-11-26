@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FuncionarioService } from '../funcionario.service';
 import { FuncionarioDataService } from '../funcionario-data.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -14,15 +15,16 @@ export class ListComponent implements OnInit {
   funcionarios: any[]=[];
   p_funcionarios: number = 0;
 
-  constructor(private funcionarioService: FuncionarioService,
-    private funcionarioDataService: FuncionarioDataService) { }
+  constructor(private rota: Router,
+              private funcionarioService: FuncionarioService,
+              private funcionarioDataService: FuncionarioDataService) { }
 
   ngOnInit(): void {
    
-    // this.funcionarioService.getAll().subscribe((resposta) => {
-    //   this.funcionarios = resposta;
-    //   console.log('lista = ', resposta);
-    // });
+    this.funcionarioService.getAll().subscribe((resposta: Funcionario[]) => {
+      this.funcionarios = resposta;
+      console.log('lista = ', resposta);
+    });
     
   }
 
@@ -32,6 +34,11 @@ export class ListComponent implements OnInit {
 
   editar(funcionario: Funcionario, key: string){
     this.funcionarioDataService.obtemFuncionario(funcionario, key);
+    this.rota.navigate(['/editar']);
+  }
+
+  incluir(){
+    this.rota.navigate(['/editar']);
   }
 
 }
