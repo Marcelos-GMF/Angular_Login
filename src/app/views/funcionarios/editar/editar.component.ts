@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormUtil } from './../../../commons/utils/form-utils';
 import { Funcionario } from './../../../components/funcionario';
 import { FuncionarioDataService } from './../funcionario-data.service';
@@ -17,9 +18,10 @@ export class EditarComponent implements OnInit {
   funcionario: Funcionario;
   key: string = '';
 
-  constructor(private funcionarioService: FuncionarioService,
-    private funcionarioDataService: FuncionarioDataService,
-    private formBuilder: FormBuilder) { }
+  constructor(private rota: Router,
+              private funcionarioService: FuncionarioService,
+              private funcionarioDataService: FuncionarioDataService,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -95,6 +97,10 @@ export class EditarComponent implements OnInit {
 
   limpar() {
     this.formGroupEditar.reset();
+  }
+
+  voltar(){
+    this.rota.navigate(['/lista']);
   }
 
 }
