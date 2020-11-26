@@ -19,10 +19,11 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.funcionarioService.getAll().subscribe((resposta: Array<any>) => {
-      this.funcionarios = resposta;
-      console.log('lista = ', resposta);
-    });
+    // this.funcionarioService.getAll().subscribe((resposta) => {
+    //   this.funcionarios = resposta;
+    //   console.log('lista = ', resposta);
+    // });
+    
   }
 
   delete(key: string){

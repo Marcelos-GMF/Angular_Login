@@ -1,3 +1,4 @@
+import { ListComponent } from './views/funcionarios/list/list.component';
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { EditarComponent } from './views/funcionarios/editar/editar.component';
 import { LoginComponent } from './views/pages/login/login.component';
@@ -13,13 +14,14 @@ const routes: Routes = [
   //   // redirectTo: 'principal',
   //   // pathMatch: 'full'
   // },
+  { path: 'login', component: LoginComponent },
+  { path: 'editar', component: EditarComponent},
+  { path: 'lista', component: ListComponent},
   { path: '', 
     component: LoginComponent , 
     canActivate: [AngularFireAuthGuard], 
-    data: { authGuardPipe: redirectUnauthorizedToLogin } },
+    data: { authGuardPipe: redirectUnauthorizedToLogin } }
   
-    { path: 'login', component: LoginComponent },
-    { path: 'editar', component: EditarComponent}
 
 ];
 

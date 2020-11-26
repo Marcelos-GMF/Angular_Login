@@ -45,6 +45,8 @@ export class EditarComponent implements OnInit {
     });
   }
 
+
+
   onSubmit() {
     console.log('Submit = ', this.formGroupEditar.value, ' Valida = ', this.formGroupEditar.valid);
     if (this.formGroupEditar.valid) {

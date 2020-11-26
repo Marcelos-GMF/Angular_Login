@@ -5,7 +5,8 @@
 
 
 
-// Configuração no Firebase do Projeto: "Projeto-Firebase-Web"	
+// Configuração no Firebase do Projeto: "Projeto-Firebase-Web" Login
+// Fonte Autenticação: https://www.youtube.com/watch?v=vAglCz1F96Y&list=PLVS4eGtApClA6qXa3hr6j5e1ByEsj1NR5&index=15&ab_channel=DevPlusPlus	
 
 export const environment = {
   production: false,

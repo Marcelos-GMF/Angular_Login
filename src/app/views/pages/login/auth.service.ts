@@ -22,9 +22,9 @@ export class AuthService {
 
     this.angularFireAuth.signInWithEmailAndPassword(usuarioVO.email, usuarioVO.senha)
           .then(usuario => {
-             console.log('Insert = ', JSON.stringify(usuario));
-             if(usuarioVO){
-               this.router.navigate(['/editar']);
+             console.log('Credential = ', JSON.stringify(usuario.user.sendEmailVerification));
+             if(usuario.user){
+               this.router.navigate(['/lista']);
              } else {
                 alert('Usuário ou senha invalida!');
              }
@@ -51,8 +51,8 @@ export class AuthService {
   }
 
   logout() {
-    this.angularFireAuth.signOut();
-    // ou this.angularFireAuth.signOut().then(() => this.router.navigate(['/login']));
+    // this.angularFireAuth.signOut();
+    this.angularFireAuth.signOut().then(() => this.router.navigate(['/login']));
   }
   
 }
